@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Se">
+        <activity android:name=".WorkerStatus"></activity>
+        <activity android:name=".WorkerStatistics" />
+        <activity android:name=".WorkerInfo" />
+        <activity android:name=".AddWorker" />
+        <activity android:name=".Workers" />
+        <activity android:name=".MyStations" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
