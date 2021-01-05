@@ -1,14 +1,14 @@
-package com.octolearn.se;
+package com.studies.se;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class WorkerStatistics extends AppCompatActivity {
+public class WorkerStatus extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_worker_statistics);
+        setContentView(R.layout.activity_worker_status);
     }
 }

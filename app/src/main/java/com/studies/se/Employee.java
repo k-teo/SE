@@ -1,4 +1,4 @@
-package com.octolearn.se;
+package com.studies.se;
 
 public class Employee {
     private String id;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.octolearn.se">
+    package="com.studies.se">
 
     <application
         android:allowBackup="true"
@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Day">
-        <activity android:name=".EditEmployee"></activity>
-        <activity android:name=".WorkerStatus" />
-        <activity android:name=".WorkerStatistics" />
-        <activity android:name=".WorkerInfo" />
-        <activity android:name=".AddWorker" />
-        <activity android:name=".Workers" />
-        <activity android:name=".MyStations" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.studies.se.EditEmployee"></activity>
+        <activity android:name="com.studies.se.WorkerStatus" />
+        <activity android:name="com.studies.se.WorkerStatistics" />
+        <activity android:name="com.studies.se.WorkerInfo" />
+        <activity android:name="com.studies.se.AddWorker" />
+        <activity android:name="com.studies.se.Workers" />
+        <activity android:name="com.studies.se.MyStations" />
+        <activity android:name="com.studies.se.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

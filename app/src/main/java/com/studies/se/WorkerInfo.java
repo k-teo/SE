@@ -1,4 +1,4 @@
-package com.octolearn.se;
+package com.studies.se;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class WorkerInfo extends AppCompatActivity implements View.OnClickListener {
+public class WorkerInfo extends AppCompatActivity implements View.OnClickListener, DeleteDialog.DialogListener {
 
     private EmployeeDB dataBase;
     private TextView nameText;
@@ -63,15 +61,7 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
                 startActivity(new Intent(getApplicationContext(), WorkerStatus.class));
                 break;
             case R.id.deleteButton:
-                if (dataBase.deleteEmployee(id))
-                {
-                    Toast.makeText(WorkerInfo.this, "Employee deleted", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(WorkerInfo.this, Workers.class));
-                }
-                else
-                {
-                    Toast.makeText(WorkerInfo.this, id, Toast.LENGTH_SHORT).show();
-                }
+                openDialog();
                 break;
             case R.id.modifyButton:
                 Intent intent = new Intent(WorkerInfo.this, EditEmployee.class);
@@ -83,6 +73,18 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
                 intent.putExtras(b);
                 startActivity(intent);
                 break;
+        }
+    }
+    public void openDialog(){
+        DeleteDialog deleteDialog = new DeleteDialog();
+        deleteDialog.show(getSupportFragmentManager(), "deleteDialog");
+    }
+
+    @Override
+    public void onYesClicked() {
+        if (dataBase.deleteEmployee(id))
+        {
+            startActivity(new Intent(WorkerInfo.this, Workers.class));
         }
     }
 }

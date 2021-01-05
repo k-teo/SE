@@ -1,4 +1,4 @@
-package com.octolearn.se;
+package com.studies.se;
 
 import android.content.ContentValues;
 import android.content.Context;

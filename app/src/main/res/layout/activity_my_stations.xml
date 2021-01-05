@@ -29,25 +29,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/station1" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="159dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="16dp"
-        android:text="Mercedes-Benz Wroclaw"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/station1" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="165dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/station2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
