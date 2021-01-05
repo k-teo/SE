@@ -8,8 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Se">
-        <activity android:name=".WorkerStatus"></activity>
+        android:theme="@style/Theme.Day">
+        <activity android:name=".EditEmployee"></activity>
+        <activity android:name=".WorkerStatus" />
         <activity android:name=".WorkerStatistics" />
         <activity android:name=".WorkerInfo" />
         <activity android:name=".AddWorker" />

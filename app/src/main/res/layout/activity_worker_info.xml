@@ -6,4 +6,103 @@
     android:layout_height="match_parent"
     tools:context=".WorkerInfo">
 
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="160dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        app:backgroundTint="#C30101"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintStart_toEndOf="@+id/modifyButton"
+        app:layout_constraintTop_toBottomOf="@+id/messageButton"
+        app:layout_constraintVertical_bias="0.304"
+        tools:text="Delete" />
+
+    <Button
+        android:id="@+id/messageButton"
+        android:layout_width="364dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="90dp"
+
+        android:text="Send private message"
+        app:backgroundTint="#FFB446"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/modifyButton"
+        android:layout_width="160dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Button"
+        app:backgroundTint="#8BC34A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messageButton"
+        app:layout_constraintVertical_bias="0.304" />
+
+    <Button
+        android:id="@+id/statisticsButton"
+        android:layout_width="364dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="308dp"
+        android:text="Statistics"
+        app:backgroundTint="#7C7C7C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/statusButton"
+        android:layout_width="364dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:text="Status"
+        app:backgroundTint="#7C7C7C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statisticsButton" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="152dp"
+        android:layout_height="155dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/nameProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="44dp"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/surnameProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="24dp"
+        android:text="Surname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/nameProfile" />
 </androidx.constraintlayout.widget.ConstraintLayout>
