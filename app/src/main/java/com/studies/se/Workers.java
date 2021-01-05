@@ -47,6 +47,9 @@ public class Workers extends AppCompatActivity {
                 b.putString("name", employees.get(position).getName());
                 b.putString("surname", employees.get(position).getSurname());
                 b.putString("rate", employees.get(position).getRate());
+                b.putString("birth", employees.get(position).getBirth());
+                b.putString("experience", employees.get(position).getExperience());
+                b.putString("owner", employees.get(position).getOwner());
                 intent.putExtras(b);
                 startActivity(intent);
                 finish();
@@ -55,6 +58,7 @@ public class Workers extends AppCompatActivity {
     }
 
     private void loadFlashcardsFromDatabase() {
+
         Cursor cursor = dataBase.getAllEmployees();
 
         if (cursor.moveToFirst()) {
@@ -64,7 +68,9 @@ public class Workers extends AppCompatActivity {
                         cursor.getString(1),
                         cursor.getString(2),
                         cursor.getString(3),
-                        cursor.getString(4)
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6)
                 ));
             } while (cursor.moveToNext());
 

@@ -15,7 +15,6 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:text="Name"
-        android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,7 +26,6 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:text="Surname"
-        android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameDetail" />
 
@@ -39,8 +37,21 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:text="Rate"
-        android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/surnameDetail" />
+
+    <TextView
+        android:id="@+id/experienceDetail"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Experience"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rateDetail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

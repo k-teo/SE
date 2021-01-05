@@ -15,13 +15,17 @@ public class AddWorker extends AppCompatActivity {
 
     private EditText nameEditText;
     private EditText surnameEditText;
-    private EditText rateEditText;
+    private EditText birthEditText;
+    private EditText experienceEditText;
 
     private String name;
     private String surname;
-    private String rate;
+    private String birth;
+    private String experience;
+
     private int idInt;
     private String id;
+
 
     private String owner = "1";
     private EmployeeDB dataBase;
@@ -36,7 +40,8 @@ public class AddWorker extends AppCompatActivity {
 
         nameEditText = (EditText) findViewById(R.id.nameAdd);
         surnameEditText = (EditText) findViewById(R.id.surnameAdd);
-        rateEditText = (EditText) findViewById(R.id.rateAdd);
+        birthEditText = (EditText) findViewById(R.id.birthAdd);
+        experienceEditText = (EditText) findViewById(R.id.experienceAdd);
 
         Button addButton = (Button) findViewById(R.id.buttonAddEmployee);
 
@@ -45,10 +50,11 @@ public class AddWorker extends AppCompatActivity {
             public void onClick(View v) {
                 name = (nameEditText.getText().toString().equals(""))? null : nameEditText.getText().toString();
                 surname = (surnameEditText.getText().toString().equals(""))? null : surnameEditText.getText().toString();
-                rate = (rateEditText.getText().toString().equals(""))? null : rateEditText.getText().toString();
+                birth = (birthEditText.getText().toString().equals(""))? null : birthEditText.getText().toString();
+                experience = (experienceEditText.getText().toString().equals(""))? null : experienceEditText.getText().toString();
                 findId();
 
-                if (dataBase.addEmployee(id, name, surname, rate, owner))
+                if (dataBase.addEmployee(id, name, surname, null, birth, experience, owner))
                 {
                     Toast.makeText(AddWorker.this, "Employee Added", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(AddWorker.this, Workers.class));
@@ -73,7 +79,9 @@ public class AddWorker extends AppCompatActivity {
                     cursor.getString(1),
                     cursor.getString(2),
                     cursor.getString(3),
-                    cursor.getString(4)
+                    cursor.getString(4),
+                    cursor.getString(5),
+                    cursor.getString(6)
             );
 
             String lastId = employee.getId();

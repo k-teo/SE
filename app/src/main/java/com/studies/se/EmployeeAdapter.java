@@ -39,14 +39,17 @@ public class EmployeeAdapter extends BaseAdapter {
         TextView nameTextView = (TextView) view.findViewById(R.id.nameDetail);
         TextView surnameTextView = (TextView) view.findViewById(R.id.surnameDetail);
         TextView rateTextView = (TextView) view.findViewById(R.id.rateDetail);
+        TextView experienceTextView = (TextView) view.findViewById(R.id.experienceDetail);
 
         String name = employees.get(position).getName();
         String surname = employees.get(position).getSurname();
-        String rate = employees.get(position).getRate();
+        String rate = (employees.get(position).getRate() == null) ? "None" : employees.get(position).getRate();
+        String experience = employees.get(position).getExperience();
 
-        nameTextView.setText(name);
-        surnameTextView.setText(surname);
-        rateTextView.setText(rate);
+        nameTextView.setText("Name: " + name);
+        surnameTextView.setText("Surname " + surname);
+        rateTextView.setText("Rate: " + rate);
+        experienceTextView.setText("Experience: " + experience + "years");
 
         return view;
     }
