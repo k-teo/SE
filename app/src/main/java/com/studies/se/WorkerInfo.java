@@ -67,7 +67,7 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.statisticsButton:
-                startActivity(new Intent(getApplicationContext(), WorkerStatistics.class));
+                startActivity(new Intent(getApplicationContext(), WorkerStatistic.class));
                 break;
             case R.id.statusButton:
                 startActivity(new Intent(getApplicationContext(), WorkerStatus.class));
