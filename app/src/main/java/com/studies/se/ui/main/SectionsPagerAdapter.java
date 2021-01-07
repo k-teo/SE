@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.studies.se.Fragment1;
+import com.studies.se.Fragment2;
 import com.studies.se.R;
 
 /**
@@ -25,11 +27,20 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         mContext = context;
     }
 
+
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        Fragment fragment = null;
+        switch (position){
+            case 0 :
+                fragment = new Fragment1();
+                break;
+            case 1 :
+                fragment = new Fragment2();
+                break;
+
+        }
+        return fragment;
     }
 
     @Nullable
