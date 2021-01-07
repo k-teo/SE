@@ -9,21 +9,23 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class Workers extends AppCompatActivity {
+public class Employees extends AppCompatActivity {
 
     private ListView employeesListView;
     private ArrayList<Employee> employees;
     private EmployeeAdapter employeeAdapter;
     private EmployeeDB dataBase;
     private String owner;
+    private String station;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_workers);
+        setContentView(R.layout.activity_employees);
 
         dataBase = new EmployeeDB(this);
         employeesListView = (ListView) findViewById(R.id.employeeListView);
@@ -33,7 +35,11 @@ public class Workers extends AppCompatActivity {
         if(b != null)
         {
             owner = b.getString("owner");
+            station = b.getString("station");
         }
+
+        TextView stationName = findViewById(R.id.employeesText);
+        stationName.setText(station);
 
         loadFlashcardsFromDatabase();
 
@@ -41,9 +47,10 @@ public class Workers extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Workers.this, AddWorker.class);
+                Intent intent = new Intent(Employees.this, AddEmployee.class);
                 Bundle b = new Bundle();
                 b.putString("owner", owner);
+                b.putString("station", station);
                 intent.putExtras(b);
                 startActivity(intent);
             }
@@ -52,7 +59,7 @@ public class Workers extends AppCompatActivity {
         employeesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(Workers.this, WorkerInfo.class);
+                Intent intent = new Intent(Employees.this, EmployeeInfo.class);
                 Bundle b = new Bundle();
                 b.putString("id", employees.get(position).getId());
                 b.putString("name", employees.get(position).getName());
@@ -61,6 +68,7 @@ public class Workers extends AppCompatActivity {
                 b.putString("phone", employees.get(position).getBirth());
                 b.putString("experience", employees.get(position).getExperience());
                 b.putString("owner", employees.get(position).getOwner());
+                b.putString("station", station);
                 intent.putExtras(b);
                 startActivity(intent);
                 finish();

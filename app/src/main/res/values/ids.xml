@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nameStation1" type="id" />
+    <item name="moneyStation1" type="id" />
+    <item name="addressStation1" type="id" />
+    <item name="numberStation1" type="id" />
+</resources>

@@ -23,6 +23,7 @@ public class EditEmployee extends AppCompatActivity {
     private String experience;
     private String phone;
     private String owner;
+    private String station;
 
     private String nameNew;
     private String surnameNew;
@@ -38,7 +39,7 @@ public class EditEmployee extends AppCompatActivity {
 
         nameText = (TextView) findViewById(R.id.nameEdit);
         surnameText = (TextView) findViewById(R.id.surnameEdit);
-        phoneText = (TextView) findViewById(R.id.birthEdit);
+        phoneText = (TextView) findViewById(R.id.phoneEdit);
         experienceText = (TextView) findViewById(R.id.experienceEdit);
 
         Bundle b = getIntent().getExtras();
@@ -51,6 +52,7 @@ public class EditEmployee extends AppCompatActivity {
             experience = b.getString("experience");
             phone = b.getString("phone");
             owner = b.getString("owner");
+            station = b.getString("station");
         }
 
         Button editButton = (Button) findViewById(R.id.buttonEditEmployee);
@@ -65,9 +67,10 @@ public class EditEmployee extends AppCompatActivity {
 
                 if (dataBase.updateEmployee(id, nameNew, surnameNew, rate, phoneNew, experienceNew, owner))
                 {
-                    Intent intent = new Intent(EditEmployee.this, Workers.class);
+                    Intent intent = new Intent(EditEmployee.this, Employees.class);
                     Bundle b = new Bundle();
                     b.putString("owner", owner);
+                    b.putString("station", station);
                     intent.putExtras(b);
                     startActivity(intent);
                 }

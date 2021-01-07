@@ -10,14 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Day">
         <activity
-            android:name=".WorkerStatistic"
+            android:name=".EmployeeStatistic"
             android:label="@string/title_activity_worker_statistic"
             android:theme="@style/Theme.Day.NoActionBar"></activity>
         <activity android:name=".EditEmployee" />
-        <activity android:name=".WorkerStatus" />
-        <activity android:name=".WorkerInfo" />
-        <activity android:name=".AddWorker" />
-        <activity android:name=".Workers" />
+        <activity android:name=".EmployeeStatus" />
+        <activity android:name=".EmployeeInfo" />
+        <activity android:name=".AddEmployee" />
+        <activity android:name=".Employees" />
         <activity android:name=".MyStations" />
         <activity android:name=".MainActivity">
             <intent-filter>

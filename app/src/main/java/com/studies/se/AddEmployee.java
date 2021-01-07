@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AddWorker extends AppCompatActivity {
+public class AddEmployee extends AppCompatActivity {
 
 
     private EditText nameEditText;
@@ -28,25 +28,27 @@ public class AddWorker extends AppCompatActivity {
 
 
     private String owner;
+    private String station;
     private EmployeeDB dataBase;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_worker);
+        setContentView(R.layout.activity_add_employee);
 
         dataBase = new EmployeeDB(this);
 
         nameEditText = (EditText) findViewById(R.id.nameAdd);
         surnameEditText = (EditText) findViewById(R.id.surnameAdd);
-        phoneEditText = (EditText) findViewById(R.id.birthAdd);
+        phoneEditText = (EditText) findViewById(R.id.phoneAdd);
         experienceEditText = (EditText) findViewById(R.id.experienceAdd);
 
         Bundle b = getIntent().getExtras();
         if(b != null)
         {
             owner = b.getString("owner");
+            station = b.getString("station");
         }
 
         Button addButton = (Button) findViewById(R.id.buttonAddEmployee);
@@ -62,20 +64,21 @@ public class AddWorker extends AppCompatActivity {
 
                 if (dataBase.addEmployee(id, name, surname, null, phone, experience, owner))
                 {
-                    Toast.makeText(AddWorker.this, "Employee Added", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(AddWorker.this, Workers.class);
+                    Toast.makeText(AddEmployee.this, "Employee Added", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(AddEmployee.this, Employees.class);
                     Bundle b = new Bundle();
                     b.putString("owner", owner);
+                    b.putString("station", station);
                     intent.putExtras(b);
                     startActivity(intent);
                 }
                 else
                 if (name == null && surname == null)
-                    Toast.makeText(AddWorker.this, "Name and surname cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddEmployee.this, "Name and surname cannot be empty", Toast.LENGTH_SHORT).show();
                 else if (name == null)
-                    Toast.makeText(AddWorker.this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddEmployee.this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
                 else if (surname == null)
-                    Toast.makeText(AddWorker.this, "Surname cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddEmployee.this, "Surname cannot be empty", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddWorker">
+    tools:context=".AddEmployee">
 
     <EditText
         android:id="@+id/nameAdd"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nameAdd" />
 
     <EditText
-        android:id="@+id/birthAdd"
+        android:id="@+id/phoneAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -55,7 +55,7 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/birthAdd" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneAdd" />
 
     <Button
         android:id="@+id/buttonAddEmployee"

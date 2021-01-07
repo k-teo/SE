@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class WorkerInfo extends AppCompatActivity implements View.OnClickListener, DeleteDialog.DialogListener {
+public class EmployeeInfo extends AppCompatActivity implements View.OnClickListener, DeleteDialog.DialogListener {
 
     private EmployeeDB dataBase;
     private TextView nameText;
@@ -23,11 +23,12 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
     private String experience;
     private String birth;
     private String owner;
+    private String station;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_worker_info);
+        setContentView(R.layout.activity_employee_info);
 
         dataBase = new EmployeeDB(this);
 
@@ -42,7 +43,7 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
 
         nameText = (TextView) findViewById(R.id.nameProfile);
         surnameText = (TextView) findViewById(R.id.surnameProfile);
-        ageText = (TextView) findViewById(R.id.ageProfile);
+        ageText = (TextView) findViewById(R.id.phoneProfile);
         experienceText = (TextView) findViewById(R.id.experienceProfile);
 
         Bundle b = getIntent().getExtras();
@@ -55,6 +56,7 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
             birth = b.getString("phone");
             experience = b.getString("experience");
             owner = b.getString("owner");
+            station = b.getString("station");
         }
 
         nameText.setText("Name: " + name);
@@ -67,16 +69,16 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.statisticsButton:
-                startActivity(new Intent(getApplicationContext(), WorkerStatistic.class));
+                startActivity(new Intent(getApplicationContext(), EmployeeStatistic.class));
                 break;
             case R.id.statusButton:
-                startActivity(new Intent(getApplicationContext(), WorkerStatus.class));
+                startActivity(new Intent(getApplicationContext(), EmployeeStatus.class));
                 break;
             case R.id.deleteButton:
                 openDialog();
                 break;
             case R.id.modifyButton:
-                Intent intent = new Intent(WorkerInfo.this, EditEmployee.class);
+                Intent intent = new Intent(EmployeeInfo.this, EditEmployee.class);
                 Bundle b = new Bundle();
                 b.putString("id", id);
                 b.putString("name", name);
@@ -85,6 +87,7 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
                 b.putString("phone", birth);
                 b.putString("experience", experience);
                 b.putString("owner", owner);
+                b.putString("station", station);
                 intent.putExtras(b);
                 startActivity(intent);
                 break;
@@ -99,9 +102,10 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
     public void onYesClicked() {
         if (dataBase.deleteEmployee(id))
         {
-            Intent intent = new Intent(WorkerInfo.this, Workers.class);
+            Intent intent = new Intent(EmployeeInfo.this, Employees.class);
             Bundle b = new Bundle();
             b.putString("owner", owner);
+            b.putString("station", station);
             intent.putExtras(b);
             startActivity(intent);
         }
