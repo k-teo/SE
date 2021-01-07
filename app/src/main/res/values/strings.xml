@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">se</string>
+    <string name="app_name">Application Name</string>
     <string name="title_activity_worker_statistic">WorkerStatistic</string>
     <string name="tab_text_1">week</string>
     <string name="tab_text_2">month</string>

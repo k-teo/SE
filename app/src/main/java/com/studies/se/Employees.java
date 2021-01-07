@@ -30,7 +30,6 @@ public class Employees extends AppCompatActivity {
         dataBase = new EmployeeDB(this);
         employeesListView = (ListView) findViewById(R.id.employeeListView);
         employees = new ArrayList<>();
-
         Bundle b = getIntent().getExtras();
         if(b != null)
         {
