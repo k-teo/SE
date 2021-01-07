@@ -61,7 +61,7 @@ public class EmployeeInfo extends AppCompatActivity implements View.OnClickListe
 
         nameText.setText("Name: " + name);
         surnameText.setText("Surname: " + surname);
-        ageText.setText("Phone number : " + birth);
+        ageText.setText(" Phone number : " + birth);
         experienceText.setText("Experience : " + experience + "years");
     }
 
