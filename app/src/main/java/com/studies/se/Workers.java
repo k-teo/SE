@@ -58,7 +58,7 @@ public class Workers extends AppCompatActivity {
                 b.putString("name", employees.get(position).getName());
                 b.putString("surname", employees.get(position).getSurname());
                 b.putString("rate", employees.get(position).getRate());
-                b.putString("birth", employees.get(position).getBirth());
+                b.putString("phone", employees.get(position).getBirth());
                 b.putString("experience", employees.get(position).getExperience());
                 b.putString("owner", employees.get(position).getOwner());
                 intent.putExtras(b);

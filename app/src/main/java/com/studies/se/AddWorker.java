@@ -15,12 +15,12 @@ public class AddWorker extends AppCompatActivity {
 
     private EditText nameEditText;
     private EditText surnameEditText;
-    private EditText birthEditText;
+    private EditText phoneEditText;
     private EditText experienceEditText;
 
     private String name;
     private String surname;
-    private String birth;
+    private String phone;
     private String experience;
 
     private int idInt;
@@ -40,7 +40,7 @@ public class AddWorker extends AppCompatActivity {
 
         nameEditText = (EditText) findViewById(R.id.nameAdd);
         surnameEditText = (EditText) findViewById(R.id.surnameAdd);
-        birthEditText = (EditText) findViewById(R.id.birthAdd);
+        phoneEditText = (EditText) findViewById(R.id.birthAdd);
         experienceEditText = (EditText) findViewById(R.id.experienceAdd);
 
         Bundle b = getIntent().getExtras();
@@ -56,11 +56,11 @@ public class AddWorker extends AppCompatActivity {
             public void onClick(View v) {
                 name = (nameEditText.getText().toString().equals(""))? null : nameEditText.getText().toString();
                 surname = (surnameEditText.getText().toString().equals(""))? null : surnameEditText.getText().toString();
-                birth = (birthEditText.getText().toString().equals(""))? null : birthEditText.getText().toString();
+                phone = (phoneEditText.getText().toString().equals(""))? null : phoneEditText.getText().toString();
                 experience = (experienceEditText.getText().toString().equals(""))? null : experienceEditText.getText().toString();
                 findId();
 
-                if (dataBase.addEmployee(id, name, surname, null, birth, experience, owner))
+                if (dataBase.addEmployee(id, name, surname, null, phone, experience, owner))
                 {
                     Toast.makeText(AddWorker.this, "Employee Added", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AddWorker.this, Workers.class);

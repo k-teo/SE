@@ -13,7 +13,7 @@ public class EditEmployee extends AppCompatActivity {
     private EmployeeDB dataBase;
     private TextView nameText;
     private TextView surnameText;
-    private TextView birthText;
+    private TextView phoneText;
     private TextView experienceText;
 
     private String id;
@@ -21,12 +21,12 @@ public class EditEmployee extends AppCompatActivity {
     private String surname;
     private String rate;
     private String experience;
-    private String birth;
+    private String phone;
     private String owner;
 
     private String nameNew;
     private String surnameNew;
-    private String birthNew;
+    private String phoneNew;
     private String experienceNew;
 
     @Override
@@ -38,7 +38,7 @@ public class EditEmployee extends AppCompatActivity {
 
         nameText = (TextView) findViewById(R.id.nameEdit);
         surnameText = (TextView) findViewById(R.id.surnameEdit);
-        birthText = (TextView) findViewById(R.id.birthEdit);
+        phoneText = (TextView) findViewById(R.id.birthEdit);
         experienceText = (TextView) findViewById(R.id.experienceEdit);
 
         Bundle b = getIntent().getExtras();
@@ -49,7 +49,7 @@ public class EditEmployee extends AppCompatActivity {
             surname = b.getString("surname");
             rate = b.getString("rate");
             experience = b.getString("experience");
-            birth = b.getString("birth");
+            phone = b.getString("phone");
             owner = b.getString("owner");
         }
 
@@ -60,12 +60,16 @@ public class EditEmployee extends AppCompatActivity {
             public void onClick(View v) {
                 nameNew = (nameText.getText().toString().equals("")) ? name : nameText.getText().toString();
                 surnameNew = (surnameText.getText().toString().equals("")) ? surname : surnameText.getText().toString();
-                birthNew = (birthText.getText().toString().equals("")) ? rate : birthText.getText().toString();
-                experienceNew = (experienceText.getText().toString().equals("")) ? rate : experienceText.getText().toString();
+                phoneNew = (phoneText.getText().toString().equals("")) ? phone : phoneText.getText().toString();
+                experienceNew = (experienceText.getText().toString().equals("")) ? experience : experienceText.getText().toString();
 
-                if (dataBase.updateEmployee(id, nameNew, surnameNew, rate, birthNew, experienceNew,owner))
+                if (dataBase.updateEmployee(id, nameNew, surnameNew, rate, phoneNew, experienceNew, owner))
                 {
-                    startActivity(new Intent(EditEmployee.this, Workers.class));
+                    Intent intent = new Intent(EditEmployee.this, Workers.class);
+                    Bundle b = new Bundle();
+                    b.putString("owner", owner);
+                    intent.putExtras(b);
+                    startActivity(intent);
                 }
             }
         });

@@ -52,7 +52,7 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
             name = b.getString("name");
             surname = b.getString("surname");
             rate = b.getString("rate");
-            birth = b.getString("birth");
+            birth = b.getString("phone");
             experience = b.getString("experience");
             owner = b.getString("owner");
         }
@@ -82,7 +82,7 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
                 b.putString("name", name);
                 b.putString("surname", surname);
                 b.putString("rate", rate);
-                b.putString("birth", birth);
+                b.putString("phone", birth);
                 b.putString("experience", experience);
                 b.putString("owner", owner);
                 intent.putExtras(b);
