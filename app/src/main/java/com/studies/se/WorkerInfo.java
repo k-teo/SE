@@ -59,7 +59,7 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
 
         nameText.setText("Name: " + name);
         surnameText.setText("Surname: " + surname);
-        ageText.setText("Age : " );
+        ageText.setText("Phone number : " + birth);
         experienceText.setText("Experience : " + experience + "years");
     }
 
@@ -99,7 +99,11 @@ public class WorkerInfo extends AppCompatActivity implements View.OnClickListene
     public void onYesClicked() {
         if (dataBase.deleteEmployee(id))
         {
-            startActivity(new Intent(WorkerInfo.this, Workers.class));
+            Intent intent = new Intent(WorkerInfo.this, Workers.class);
+            Bundle b = new Bundle();
+            b.putString("owner", owner);
+            intent.putExtras(b);
+            startActivity(intent);
         }
     }
 }

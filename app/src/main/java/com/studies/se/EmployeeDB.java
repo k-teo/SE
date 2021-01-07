@@ -16,7 +16,7 @@ public class EmployeeDB extends SQLiteOpenHelper {
     public static final String EMPLOYEE_COLUMN_NAME = "name";
     public static final String EMPLOYEE_COLUMN_SURNAME = "surname";
     public static final String EMPLOYEE_COLUMN_RATE = "rate";
-    public static final String EMPLOYEE_COLUMN_BIRTH = "birth";
+    public static final String EMPLOYEE_COLUMN_PHONE = "phone_number";
     public static final String EMPLOYEE_COLUMN_EXPERIENCE = "experience";
     public static final String EMPLOYEE_COLUMN_OWNER_ID = "owner_id";
 
@@ -31,7 +31,7 @@ public class EmployeeDB extends SQLiteOpenHelper {
                 EMPLOYEE_COLUMN_NAME + " TEXT NOT NULL, " +
                 EMPLOYEE_COLUMN_SURNAME + " TEXT NOT NULL, " +
                 EMPLOYEE_COLUMN_RATE + " TEXT, " +
-                EMPLOYEE_COLUMN_BIRTH + " TEXT, " +
+                EMPLOYEE_COLUMN_PHONE + " TEXT, " +
                 EMPLOYEE_COLUMN_EXPERIENCE + " TEXT, " +
                 EMPLOYEE_COLUMN_OWNER_ID + " TEXT NOT NULL, " +
                 "PRIMARY KEY (" + EMPLOYEE_COLUMN_ID + ")," +
@@ -45,7 +45,7 @@ public class EmployeeDB extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    boolean addEmployee(String id, String name, String surname, String rate, String birth, String experience, String owner){
+    boolean addEmployee(String id, String name, String surname, String rate, String phone, String experience, String owner){
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
 
         ContentValues contentValues = new ContentValues();
@@ -53,7 +53,7 @@ public class EmployeeDB extends SQLiteOpenHelper {
         contentValues.put(EMPLOYEE_COLUMN_NAME, name);
         contentValues.put(EMPLOYEE_COLUMN_SURNAME, surname);
         contentValues.put(EMPLOYEE_COLUMN_RATE, rate);
-        contentValues.put(EMPLOYEE_COLUMN_BIRTH, birth);
+        contentValues.put(EMPLOYEE_COLUMN_PHONE, phone);
         contentValues.put(EMPLOYEE_COLUMN_EXPERIENCE, experience);
         contentValues.put(EMPLOYEE_COLUMN_OWNER_ID, owner);
 
@@ -65,7 +65,13 @@ public class EmployeeDB extends SQLiteOpenHelper {
         return sqLiteDatabase.rawQuery("SELECT * FROM " + EMPLOYEE_TABLE_NAME, null);
     }
 
-    boolean updateEmployee(String id, String name, String surname, String rate, String birth, String experience, String owner) {
+    Cursor getAllEmployees(String ownerId) {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        return sqLiteDatabase.rawQuery("SELECT * FROM " + EMPLOYEE_TABLE_NAME
+                + " WHERE " + EMPLOYEE_COLUMN_OWNER_ID + "=" + ownerId, null);
+    }
+
+    boolean updateEmployee(String id, String name, String surname, String rate, String phone, String experience, String owner) {
 
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -73,7 +79,7 @@ public class EmployeeDB extends SQLiteOpenHelper {
         contentValues.put(EMPLOYEE_COLUMN_NAME, name);
         contentValues.put(EMPLOYEE_COLUMN_SURNAME, surname);
         contentValues.put(EMPLOYEE_COLUMN_RATE, rate);
-        contentValues.put(EMPLOYEE_COLUMN_BIRTH, birth);
+        contentValues.put(EMPLOYEE_COLUMN_PHONE, phone);
         contentValues.put(EMPLOYEE_COLUMN_EXPERIENCE, experience);
         contentValues.put(EMPLOYEE_COLUMN_OWNER_ID, owner);
         return sqLiteDatabase.update(EMPLOYEE_TABLE_NAME, contentValues,

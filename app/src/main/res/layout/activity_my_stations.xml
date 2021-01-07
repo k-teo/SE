@@ -6,12 +6,208 @@
     android:layout_height="match_parent"
     tools:context=".MyStations">
 
+    <TextView
+        android:id="@+id/nameStation1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Mercedes-Benz Wrocław"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.319"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/station1" />
+
+    <TextView
+        android:id="@+id/moneyStation1"
+        android:layout_width="47dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="40dp"
+        android:text="$$-$$$"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nameStation1" />
+
+    <TextView
+        android:id="@+id/addressStation1"
+        android:layout_width="208dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Olsztyńska 1, 51-180 Wrocław"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/moneyStation1" />
+
+    <TextView
+        android:id="@+id/numberStation1"
+        android:layout_width="113dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="36dp"
+        android:text="+48 71 326 90 20"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/addressStation1" />
+
+    <ImageView
+        android:id="@+id/moneyImageStation1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/moneyStation1"
+        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameStation1"
+        app:srcCompat="@drawable/ic_baseline_monetization_on_24"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/locationImageStation1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/addressStation1"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moneyImageStation1"
+        app:srcCompat="@drawable/ic_baseline_location_on_24"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/phoneImageStation1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/numberStation1"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationImageStation1"
+        app:srcCompat="@drawable/ic_baseline_local_phone_24"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/nameStation2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Nissan Wrocław"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.237"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/station2" />
+
+    <TextView
+        android:id="@+id/moneyStation2"
+        android:layout_width="47dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="40dp"
+        android:text="$-$$"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nameStation2" />
+
+    <TextView
+        android:id="@+id/addressStation2"
+        android:layout_width="259dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Wilanowska 2, 51-206 Wrocław"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/moneyStation2" />
+
+    <TextView
+        android:id="@+id/numberStation2"
+        android:layout_width="113dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="36dp"
+        android:text="+48 71 780 08 00"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/addressStation2" />
+
+    <ImageView
+        android:id="@+id/moneyImageStation2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/moneyStation2"
+        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameStation2"
+        app:srcCompat="@drawable/ic_baseline_monetization_on_24"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/locationImageStation2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/addressStation2"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moneyImageStation2"
+        app:srcCompat="@drawable/ic_baseline_location_on_24"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/phoneImageStation2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:translationZ="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/numberStation2"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationImageStation2"
+        app:srcCompat="@drawable/ic_baseline_local_phone_24"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+
     <Button
         android:id="@+id/station1"
-        android:layout_width="350dp"
-        android:layout_height="146dp"
-        android:layout_marginTop="128dp"
+        android:layout_width="351dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="140dp"
         android:background="@drawable/station_button"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +216,7 @@
     <Button
         android:id="@+id/station2"
         android:layout_width="342dp"
-        android:layout_height="151dp"
+        android:layout_height="164dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/station_button"
         app:backgroundTint="#FFFFFF"
@@ -28,5 +224,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/station1" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,7 @@ public class Workers extends AppCompatActivity {
     private ArrayList<Employee> employees;
     private EmployeeAdapter employeeAdapter;
     private EmployeeDB dataBase;
+    private String owner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +29,23 @@ public class Workers extends AppCompatActivity {
         employeesListView = (ListView) findViewById(R.id.employeeListView);
         employees = new ArrayList<>();
 
+        Bundle b = getIntent().getExtras();
+        if(b != null)
+        {
+            owner = b.getString("owner");
+        }
+
         loadFlashcardsFromDatabase();
 
         Button button = (Button) findViewById(R.id.add);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Workers.this, AddWorker.class));
+                Intent intent = new Intent(Workers.this, AddWorker.class);
+                Bundle b = new Bundle();
+                b.putString("owner", owner);
+                intent.putExtras(b);
+                startActivity(intent);
             }
         });
 
@@ -59,7 +70,7 @@ public class Workers extends AppCompatActivity {
 
     private void loadFlashcardsFromDatabase() {
 
-        Cursor cursor = dataBase.getAllEmployees();
+        Cursor cursor = dataBase.getAllEmployees(owner);
 
         if (cursor.moveToFirst()) {
             do {

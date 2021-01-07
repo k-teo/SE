@@ -27,7 +27,7 @@ public class AddWorker extends AppCompatActivity {
     private String id;
 
 
-    private String owner = "1";
+    private String owner;
     private EmployeeDB dataBase;
 
 
@@ -43,6 +43,12 @@ public class AddWorker extends AppCompatActivity {
         birthEditText = (EditText) findViewById(R.id.birthAdd);
         experienceEditText = (EditText) findViewById(R.id.experienceAdd);
 
+        Bundle b = getIntent().getExtras();
+        if(b != null)
+        {
+            owner = b.getString("owner");
+        }
+
         Button addButton = (Button) findViewById(R.id.buttonAddEmployee);
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +63,11 @@ public class AddWorker extends AppCompatActivity {
                 if (dataBase.addEmployee(id, name, surname, null, birth, experience, owner))
                 {
                     Toast.makeText(AddWorker.this, "Employee Added", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(AddWorker.this, Workers.class));
+                    Intent intent = new Intent(AddWorker.this, Workers.class);
+                    Bundle b = new Bundle();
+                    b.putString("owner", owner);
+                    intent.putExtras(b);
+                    startActivity(intent);
                 }
                 else
                 if (name == null && surname == null)

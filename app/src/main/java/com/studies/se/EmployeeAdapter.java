@@ -43,7 +43,7 @@ public class EmployeeAdapter extends BaseAdapter {
 
         String name = employees.get(position).getName();
         String surname = employees.get(position).getSurname();
-        String rate = (employees.get(position).getRate() == null) ? "None" : employees.get(position).getRate();
+        String rate = (employees.get(position).getRate() == null) ? "No rates yet" : employees.get(position).getRate();
         String experience = employees.get(position).getExperience();
 
         nameTextView.setText("Name: " + name);
